@@ -134,3 +134,24 @@ add_filter(
 		return preg_replace( '/<img /', '<img loading="lazy" ', $html, 1 );
 	}
 );
+
+/**
+ * The editor canvas is dark, like the site. Post titles would be dark on dark,
+ * so they get the cream text colour inside the editor.
+ */
+add_filter(
+	'block_editor_settings_all',
+	static function ( $settings, $context ) {
+		// The page background is dark, so the title block needs the cream text colour in the editor.
+		$settings['styles'][] = array(
+			'css' => '.editor-styles-wrapper .editor-post-title,.editor-styles-wrapper .editor-post-title__input,.editor-styles-wrapper .wp-block-post-title{color:#EEE9E2}',
+		);
+		// A property's description sits on the dark property page, so it needs cream text too.
+		if ( ! empty( $context->post ) && 'al_property' === $context->post->post_type ) {
+			$settings['styles'][] = array( 'css' => '.editor-styles-wrapper p,.editor-styles-wrapper li{color:#EEE9E2}' );
+		}
+		return $settings;
+	},
+	10,
+	2
+);
