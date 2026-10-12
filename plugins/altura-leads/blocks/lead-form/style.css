@@ -1,0 +1,49 @@
+/* Enquiry form, drawn for the dark ALTURA enquire section: hairline underlines, small capitals, bronze focus.
+   The form still works on a light background: colours come from custom properties set on .npl-form. */
+.npl-form { --npl-fg: var(--al-cream, #EEE9E2); --npl-muted: rgba(238, 233, 226, .78); --npl-line: rgba(238, 233, 226, .55); --npl-accent: var(--al-bronze, #B29674); --npl-error: #F2B8A8; color: var(--npl-fg); }
+.npl-form [hidden] { display: none !important; }
+.npl-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 34px 40px; align-content: start; }
+.npl-fields > * { min-width: 0; }
+.npl-field { display: flex; flex-direction: column; gap: 10px; margin: 0; }
+.npl-field--wide, .npl-nav, .npl-fineprint, .npl-summary { grid-column: 1 / -1; }
+
+.npl-label { font-size: 11px; font-weight: 400; letter-spacing: .24em; text-transform: uppercase; color: var(--npl-muted); }
+.npl-hint { margin: 0; font-size: 13px; color: var(--npl-muted); }
+.npl-optional { text-transform: none; letter-spacing: .04em; opacity: .85; }
+
+.npl-input {
+	font: inherit; font-size: 16px; font-weight: 300; color: var(--npl-fg); background: transparent; width: 100%; box-sizing: border-box;
+	border: 0; border-bottom: 1px solid var(--npl-line); border-radius: 0; padding: 8px 0 12px; resize: vertical; min-height: 0;
+}
+textarea.npl-input { line-height: 1.5; }
+.npl-select { appearance: none; padding-right: 26px;
+	background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none' stroke='%23B29674' stroke-width='1.2'%3E%3Cpath d='m1 1 5 5 5-5'/%3E%3C/svg%3E");
+	background-repeat: no-repeat; background-position: right 2px center; }
+.npl-select option { color: #111; background: #EEE9E2; }
+.npl-input:focus { outline: none; border-bottom-color: var(--npl-accent); }
+.npl-input:focus-visible { outline: 2px solid var(--npl-accent); outline-offset: 6px; }
+.npl-input[aria-invalid="true"] { border-bottom-color: var(--npl-error); }
+
+.npl-error { margin: 0; font-size: 14px; color: var(--npl-error); }
+.npl-error::before { content: "! "; font-weight: 600; }
+
+.npl-nav { margin: 0; }
+.npl-btn {
+	display: inline-flex; align-items: center; justify-content: center; min-height: 52px; padding: 0 38px; cursor: pointer;
+	font: inherit; font-size: 12px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; line-height: 1.2;
+	background: transparent; color: var(--npl-accent); border: 1px solid var(--npl-accent); border-radius: 0;
+	transition: background .4s, color .4s;
+}
+.npl-btn:hover, .npl-btn:focus-visible { background: var(--npl-accent); color: var(--al-dark, #151617); }
+.npl-btn:disabled { opacity: .7; cursor: progress; }
+
+.npl-fineprint { margin: 0; font-size: 12.5px; line-height: 1.55; color: var(--npl-muted); max-width: 60ch; }
+.npl-summary { border: 1px solid var(--npl-error); padding: 14px 18px; background: rgba(242, 184, 168, .08); }
+.npl-summary p { margin: 0 0 .3rem; }
+.npl-summary ul { margin: 0; padding-left: 1.2rem; }
+.npl-summary a { color: var(--npl-error); }
+
+/* Honeypot: off-screen, not display:none (some bots skip hidden fields). */
+.npl-hp { position: absolute !important; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+@media (max-width: 599px) { .npl-fields { grid-template-columns: 1fr; gap: 28px; } }

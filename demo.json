@@ -1,0 +1,41 @@
+{
+  "name": "ALTURA Properties",
+  "slug": "altura",
+  "prefix": "al",
+  "github_user": "hugooblak",
+  "github_repo": "altura-demo",
+  "playground_url": "https://playground.wordpress.net/?blueprint-url=https://raw.githubusercontent.com/hugooblak/altura-demo/main/blueprint.json",
+  "platform": "wordpress",
+  "industry": "Luxury real estate",
+  "site_type": "Property showcase with enquiry inbox",
+  "features": [
+    "properties are their own content type: add or edit one in the admin and it appears on the home slider, the properties page and its own page",
+    "full-screen hero slider with wipe transitions, counter and arrows, built from the first six properties",
+    "property page with price (or 'Price on request'), beds, baths, size, plot, status and an enquire button",
+    "status labels: available, under offer, sold",
+    "enquiry form: name, email, phone, property, budget, message; the property is pre-selected from the button you clicked",
+    "every enquiry emailed to the agent and saved in the admin with the sent email attached",
+    "enquiries inbox with follow-up status (new, contacted, viewing, offer, lost, spam) and CSV export",
+    "spam protection without a captcha: honeypot, signed timestamp and a per-visitor rate limit",
+    "Google Analytics, Meta Pixel and Search Console IDs in one settings screen, nothing loaded until filled in",
+    "scroll reveals in CSS only, reduced motion respected",
+    "meta descriptions and Open Graph tags",
+    "privacy export/erase wired to WordPress's own privacy tools",
+    "block theme, native blocks, block patterns, no page builder",
+    "no third-party scripts until tracking IDs are added; automated WCAG 2.2 AA checks (axe) pass"
+  ],
+  "upwork_job_id": "",
+  "pages": [
+    "/",
+    "/properties/",
+    "/property/villa-kastello/",
+    "/property/dar-zitoun/",
+    "/philosophy/",
+    "/enquire/",
+    "/thank-you/",
+    "/privacy-policy/",
+    "/nope/"
+  ],
+  "plugins_from_wporg": [],
+  "copied_from": "merrycrate"
+}

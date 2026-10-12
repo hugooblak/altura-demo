@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "altura/lead-form",
+	"title": "Enquiry form",
+	"category": "widgets",
+	"icon": "feedback",
+	"description": "The enquiry form: name, email, telephone, property, budget and message. Every enquiry is emailed to the agent and saved under Enquiries.",
+	"keywords": [ "enquiry", "form", "contact", "property" ],
+	"textdomain": "altura-leads",
+	"attributes": {
+		"buttonText": { "type": "string", "default": "" }
+	},
+	"supports": { "html": false, "multiple": true, "reusable": false },
+	"editorScript": "file:./editor.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

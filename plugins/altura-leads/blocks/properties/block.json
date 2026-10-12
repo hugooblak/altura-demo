@@ -1,0 +1,19 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "altura/properties",
+	"title": "Properties",
+	"category": "widgets",
+	"icon": "admin-home",
+	"description": "Shows the properties from the Properties screen as a photo grid. Change a name, price or photo in the admin and it changes here.",
+	"keywords": [ "properties", "listings", "grid", "villas" ],
+	"textdomain": "altura-leads",
+	"attributes": {
+		"display": { "type": "string", "default": "grid" },
+		"count": { "type": "number", "default": 6 }
+	},
+	"supports": { "html": false, "align": [ "wide", "full" ], "multiple": true },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

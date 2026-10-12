@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "altura/hero",
+	"title": "Property hero slider",
+	"category": "widgets",
+	"icon": "slides",
+	"description": "The full-screen hero: headline on the left and a slider of the first six properties on the right. The photos, names and places come from the Properties screen.",
+	"keywords": [ "hero", "slider", "properties", "carousel" ],
+	"textdomain": "altura-leads",
+	"attributes": {
+		"headlineA": { "type": "string", "default": "Beyond" },
+		"headlineB": { "type": "string", "default": "Extraordinary" },
+		"subA": { "type": "string", "default": "Curated properties." },
+		"subB": { "type": "string", "default": "Exceptional living." },
+		"count": { "type": "number", "default": 6 }
+	},
+	"supports": { "html": false, "align": [ "full" ], "multiple": false, "reusable": false },
+	"editorScript": "file:./editor.js",
+	"viewScript": "file:./view.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

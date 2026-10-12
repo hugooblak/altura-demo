@@ -1,0 +1,16 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "altura/property-facts",
+	"title": "Property facts",
+	"category": "widgets",
+	"icon": "admin-home",
+	"description": "On a property page: place, price, status, the key facts and the Enquire button, read from the property's fields.",
+	"keywords": [ "property", "price", "facts" ],
+	"textdomain": "altura-leads",
+	"usesContext": [ "postId" ],
+	"supports": { "html": false, "multiple": false },
+	"editorScript": "file:./editor.js",
+	"style": "file:./style.css",
+	"render": "file:./render.php"
+}

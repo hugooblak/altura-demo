@@ -1,0 +1,17 @@
+/* Property cards. Used on cream (home grid, Properties page) and on dark (related properties). */
+.al-props{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(40px,4vw,72px) 3.2%}
+.al-props .prop{margin:0;padding:0;list-style:none}
+.al-props .prop a{display:block;color:inherit;text-decoration:none}
+.al-props .prop__img{display:block;aspect-ratio:4/5;overflow:hidden;background:var(--al-dark)}
+.al-props .prop__img img{display:block;width:100%;height:100%;max-width:none;object-fit:cover;object-position:var(--pos,50%) 50%;transition:transform 1.1s var(--al-ease)}
+.al-props .prop a:hover .prop__img img,.al-props .prop a:focus-visible .prop__img img{transform:scale(1.03)}
+.al-props .prop__num{display:block;margin-top:20px;font-family:var(--al-serif);font-size:20px;color:var(--al-bronze-sm);line-height:1;font-variant-numeric:lining-nums}
+.al-props .prop__name{position:relative;display:inline-block;margin-top:10px;font-family:var(--al-serif);font-weight:400;font-size:clamp(16px,1.2vw,16px);letter-spacing:.22em;text-transform:uppercase}
+.al-props .prop__name::after{content:"";position:absolute;left:0;right:.22em;bottom:-5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .8s var(--al-ease)}
+.al-props .prop a:hover .prop__name::after,.al-props .prop a:focus-visible .prop__name::after{transform:scaleX(1)}
+.al-props .prop__loc{display:block;margin-top:6px;font-size:11px;font-weight:400;letter-spacing:.24em;text-transform:uppercase;color:var(--al-muted-cream)}
+.al-props .prop__price{display:block;margin-top:14px;font-family:var(--al-serif);font-size:22px;font-variant-numeric:lining-nums}
+.al-props .prop__facts{display:block;margin-top:4px;font-size:13px;color:var(--al-muted-cream)}
+.al-props .prop a:focus-visible{outline:2px solid var(--al-bronze-sm);outline-offset:6px}
+@media (max-width:959px){.al-props{grid-template-columns:repeat(2,1fr);gap:40px 20px}}
+@media (max-width:599px){.al-props{grid-template-columns:1fr}}

@@ -1,0 +1,77 @@
+{
+	"$schema": "https://playground.wordpress.net/blueprint-schema.json",
+	"meta": {
+		"title": "ALTURA Properties: luxury real estate site with property listings and an enquiry inbox",
+		"description": "Block theme for a luxury villa agency: full-screen slider, properties the agent edits in the admin, a page for each property and an enquiry form that emails the agent and saves every enquiry. Built for a fictional agency.",
+		"author": "hugooblak",
+		"categories": [
+			"Themes"
+		]
+	},
+	"landingPage": "/",
+	"preferredVersions": {
+		"php": "8.3",
+		"wp": "latest"
+	},
+	"features": {
+		"networking": true
+	},
+	"login": true,
+	"steps": [
+		{
+			"step": "installTheme",
+			"themeData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/altura-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "theme/altura"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/altura-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "plugins/altura-leads"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "installPlugin",
+			"pluginData": {
+				"resource": "git:directory",
+				"url": "https://github.com/hugooblak/altura-demo",
+				"ref": "main",
+				"refType": "branch",
+				"path": "plugins/altura-demo-notes"
+			},
+			"options": {
+				"activate": true
+			}
+		},
+		{
+			"step": "mkdir",
+			"path": "/wordpress/wp-content/altura-setup"
+		},
+		{
+			"step": "writeFile",
+			"path": "/wordpress/wp-content/altura-setup/setup.php",
+			"data": {
+				"resource": "url",
+				"url": "https://raw.githubusercontent.com/hugooblak/altura-demo/main/content/setup.php"
+			}
+		},
+		{
+			"step": "runPHP",
+			"code": "<?php require '/wordpress/wp-load.php'; require '/wordpress/wp-content/altura-setup/setup.php';"
+		}
+	]
+}
